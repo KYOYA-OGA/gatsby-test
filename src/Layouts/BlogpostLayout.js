@@ -7,21 +7,22 @@ import SEO from "../components/SEO"
 const BlogpostLayout = ({ data }) => {
   const post = data.wordpressPost
   return (
-
     <div>
       <SEO
         title={post.title}
         description={post.excerpt}
         image={post.featured_media.source_url}
-        keywords={post.categories.map(res => res.name).join(', ')}
+        keywords={post.categories.map(res => res.name).join(", ")}
       />
       <Header />
-      <div className="container">
-        <div className="row justify-content-md-center">
-          <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <main>
+        <div className="container">
+          <div className="row justify-content-md-center">
+            <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          </div>
         </div>
-      </div>
+      </main>
       <Footer />
     </div>
   )
