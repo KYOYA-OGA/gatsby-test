@@ -2,9 +2,9 @@ module.exports = {
   siteMetadata: {
     title: "Gatsby-Bootstrap",
     description: "ディスクリプションです",
-    keywords:"gatsby, gatsbyjs bootstrap headless WordPress",
+    keywords: "gatsby, gatsbyjs bootstrap headless WordPress",
     image: "/static/gatsby.jpg",
-    url:"https://www.gatsbyjs.com/"
+    url: "https://www.gatsbyjs.com/",
   },
   plugins: [
     {
@@ -27,5 +27,17 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS Bootstrap Tutorial`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#f8f9fa`,
+        theme_color: `#fff`,
+        display: `standalone`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 }
